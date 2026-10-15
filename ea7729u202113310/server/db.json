@@ -69,6 +69,17 @@
       "stargazersCount": 220000,
       "allocatedSizeGb": 350,
       "registeredAt": "2026-10-11T12:00:00.000Z"
+    },
+    {
+      "nodeId": "cin-ap-south-01",
+      "topic": "typescript",
+      "repositoryId": 41881900,
+      "repositoryName": "vscode",
+      "fullName": "microsoft/vscode",
+      "stargazersCount": 193633,
+      "allocatedSizeGb": 12,
+      "registeredAt": "2026-10-15T09:00:30.757Z",
+      "id": "IpNbK9h"
     }
   ]
 }
