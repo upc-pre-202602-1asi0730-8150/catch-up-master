@@ -1,0 +1,49 @@
+@let data = occupancy();
+<mat-card appearance="outlined" class="card" [attr.aria-labelledby]="'ci-node-title-' + data.node.id">
+  <mat-card-header>
+    <mat-card-title [id]="'ci-node-title-' + data.node.id">{{ data.node.name }}</mat-card-title>
+    <mat-card-subtitle>
+      <mat-icon class="inline-icon" aria-hidden="true">place</mat-icon>
+      <span class="visually-hidden">{{ 'ci-nodes.location' | translate }}: </span>{{ data.node.location }}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="content">
+    @if (data.manifests.length === 0) {
+      <p class="empty">{{ 'ci-nodes.no-repositories' | translate }}</p>
+    } @else {
+      <ul class="manifests">
+        @for (manifest of data.manifests; track manifest.id) {
+          <li>
+            <span class="repo-name">{{ manifest.repositoryName }}</span>
+            <span class="repo-full-name">{{ manifest.fullName }}</span>
+            <span class="repo-size">{{ 'ci-nodes.allocated-gb' | translate: { size: manifest.allocatedSizeGb } }}</span>
+          </li>
+        }
+      </ul>
+    }
+  </mat-card-content>
+
+  <mat-card-footer class="footer">
+    <dl class="indicators">
+      <div>
+        <dt>{{ 'ci-nodes.total-allocated-storage' | translate }}</dt>
+        <dd>{{ 'ci-nodes.gb-value' | translate: { value: data.totalAllocatedStorageGb } }}</dd>
+      </div>
+      <div>
+        <dt>{{ 'ci-nodes.available-capacity' | translate }}</dt>
+        <dd>{{ 'ci-nodes.gb-value' | translate: { value: data.availableCapacityGb } }}</dd>
+      </div>
+      <div>
+        <dt>{{ 'ci-nodes.utilization-status' | translate }}</dt>
+        <dd>
+          <span class="status" [class]="data.utilizationStatus">
+            <mat-icon aria-hidden="true">{{ statusIcon(data.utilizationStatus) }}</mat-icon>
+            {{ 'utilization-status.' + data.utilizationStatus | translate }}
+            ({{ data.utilizationPercentage.toFixed(0) }}%)
+          </span>
+        </dd>
+      </div>
+    </dl>
+  </mat-card-footer>
+</mat-card>

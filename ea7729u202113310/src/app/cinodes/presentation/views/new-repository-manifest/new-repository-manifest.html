@@ -1,0 +1,83 @@
+<section aria-labelledby="new-manifest-title">
+  <h1 id="new-manifest-title">{{ 'new-manifest.title' | translate }}</h1>
+  <p class="subtitle">{{ 'new-manifest.subtitle' | translate }}</p>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <mat-form-field appearance="outline" subscriptSizing="dynamic">
+      <mat-label>{{ 'new-manifest.topic' | translate }}</mat-label>
+      <mat-select formControlName="topic" required>
+        @for (topic of topics; track topic) {
+          <mat-option [value]="topic">{{ topic }}</mat-option>
+        }
+      </mat-select>
+      @if (form.controls.topic.hasError('required')) {
+        <mat-error>{{ 'new-manifest.error.required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" subscriptSizing="dynamic">
+      <mat-label>{{ 'new-manifest.repository' | translate }}</mat-label>
+      <mat-select formControlName="repositoryId" required>
+        @for (repository of topicsStore.repositories(); track repository.id) {
+          <mat-option [value]="repository.id">{{ repository.fullName }} ★ {{ repository.stargazersCount }}</mat-option>
+        }
+      </mat-select>
+      @if (!form.controls.topic.value) {
+        <mat-hint>{{ 'new-manifest.repository-hint' | translate }}</mat-hint>
+      }
+      @if (form.controls.repositoryId.hasError('required')) {
+        <mat-error>{{ 'new-manifest.error.required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    @if (topicsStore.loading()) {
+      <div class="feedback" role="status" aria-live="polite">
+        <mat-progress-spinner mode="indeterminate" diameter="20" aria-hidden="true" />
+        {{ 'new-manifest.repositories-loading' | translate }}
+      </div>
+    }
+    @if (topicsStore.error()) {
+      <p class="feedback error" role="alert">{{ 'new-manifest.repositories-error' | translate }}</p>
+    }
+
+    <mat-form-field appearance="outline" subscriptSizing="dynamic">
+      <mat-label>{{ 'new-manifest.ci-node' | translate }}</mat-label>
+      <mat-select formControlName="nodeId" required>
+        @for (node of ciNodesStore.ciNodes(); track node.id) {
+          <mat-option [value]="node.id">{{ node.name }}</mat-option>
+        }
+      </mat-select>
+      @if (selectedNodeAvailableGb() !== null) {
+        <mat-hint>{{ 'new-manifest.node-available' | translate: { value: selectedNodeAvailableGb() } }}</mat-hint>
+      }
+      @if (form.controls.nodeId.hasError('required')) {
+        <mat-error>{{ 'new-manifest.error.required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" subscriptSizing="dynamic">
+      <mat-label>{{ 'new-manifest.allocated-size' | translate }}</mat-label>
+      <input matInput type="number" formControlName="allocatedSizeGb" min="0" required />
+      @if (form.controls.allocatedSizeGb.hasError('required')) {
+        <mat-error>{{ 'new-manifest.error.required' | translate }}</mat-error>
+      } @else if (form.controls.allocatedSizeGb.hasError('notPositive')) {
+        <mat-error>{{ 'new-manifest.error.not-positive' | translate }}</mat-error>
+      } @else if (form.controls.allocatedSizeGb.hasError('exceedsCapacity')) {
+        <mat-error role="alert">{{ 'new-manifest.error.exceeds-capacity' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    @if (saveFailed()) {
+      <p class="feedback error" role="alert">{{ 'new-manifest.save-error' | translate }}</p>
+    }
+
+    <div class="actions">
+      <button mat-flat-button type="submit" [disabled]="form.invalid || saving()">
+        {{ 'new-manifest.create' | translate }}
+      </button>
+      <button mat-stroked-button type="button" (click)="onCancel()">
+        {{ 'new-manifest.cancel' | translate }}
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,13 @@
+.not-found {
+  text-align: center;
+  padding: 48px 16px;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+p {
+  color: var(--mat-sys-on-surface-variant);
+  word-break: break-all;
+}

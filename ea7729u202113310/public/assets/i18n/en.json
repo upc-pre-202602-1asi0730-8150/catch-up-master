@@ -1,0 +1,60 @@
+{
+  "toolbar": {
+    "app-title": "GitHub CI/CD Node & Repository Management Platform",
+    "toggle-menu": "Toggle navigation menu",
+    "language": "Language selection",
+    "logo-alt": "GitHub logo"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "home": "Home",
+    "new-repository-manifest": "New Repository Manifest"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Advanced CI/CD Node and Open Source Repository Management Platform."
+  },
+  "ci-nodes": {
+    "title": "My CI Nodes",
+    "loading": "Loading CI nodes",
+    "load-error": "CI nodes could not be loaded.",
+    "retry": "Retry",
+    "no-repositories": "No repositories registered in this node.",
+    "location": "Location",
+    "allocated-gb": "{{size}} GB",
+    "total-allocated-storage": "Total Allocated Storage",
+    "available-capacity": "Available Capacity",
+    "utilization-status": "Utilization Status",
+    "gb-value": "{{value}} GB"
+  },
+  "utilization-status": {
+    "normal": "Normal",
+    "warning": "Warning",
+    "critical": "Critical"
+  },
+  "new-manifest": {
+    "title": "New Repository Manifest",
+    "subtitle": "Register Open Source Repository to Regional CI/CD Node",
+    "topic": "Topic",
+    "repository": "Repository",
+    "repository-hint": "Select a topic first to load repositories from GitHub",
+    "repositories-loading": "Loading repositories from GitHub",
+    "repositories-error": "Repositories could not be loaded from GitHub. Try again later.",
+    "ci-node": "CI Node",
+    "node-available": "Available capacity: {{value}} GB",
+    "allocated-size": "Allocated size (GB)",
+    "create": "Create",
+    "cancel": "Cancel",
+    "save-error": "The repository manifest could not be saved.",
+    "error": {
+      "required": "This field is required",
+      "not-positive": "Allocated size must be greater than 0",
+      "exceeds-capacity": "Allocated size exceeds available CI node capacity"
+    }
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "message": "The route {{path}} was not found.",
+    "back-home": "Back to Home"
+  }
+}

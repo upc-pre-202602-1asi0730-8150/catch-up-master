@@ -1,0 +1,43 @@
+h1 {
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 520px;
+  padding: 24px;
+  background: var(--mat-sys-surface-container);
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 8px;
+}
+
+.feedback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.feedback.error {
+  color: var(--mat-sys-error);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+mat-form-field {
+  margin-bottom: 16px;
+  --mat-form-field-subscript-text-color: var(--mat-sys-on-surface-variant);
+}

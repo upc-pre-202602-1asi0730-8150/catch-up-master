@@ -1,0 +1,60 @@
+{
+  "toolbar": {
+    "app-title": "Plataforma de Gestión de Nodos CI/CD y Repositorios de GitHub",
+    "toggle-menu": "Alternar menú de navegación",
+    "language": "Selección de idioma",
+    "logo-alt": "Logo de GitHub"
+  },
+  "nav": {
+    "main": "Navegación principal",
+    "home": "Inicio",
+    "new-repository-manifest": "Nuevo Manifiesto de Repositorio"
+  },
+  "home": {
+    "title": "Inicio",
+    "description": "Plataforma avanzada de gestión de nodos CI/CD y repositorios de código abierto."
+  },
+  "ci-nodes": {
+    "title": "Mis Nodos CI",
+    "loading": "Cargando nodos CI",
+    "load-error": "No se pudieron cargar los nodos CI.",
+    "retry": "Reintentar",
+    "no-repositories": "No hay repositorios registrados en este nodo.",
+    "location": "Ubicación",
+    "allocated-gb": "{{size}} GB",
+    "total-allocated-storage": "Almacenamiento Total Asignado",
+    "available-capacity": "Capacidad Disponible",
+    "utilization-status": "Estado de Utilización",
+    "gb-value": "{{value}} GB"
+  },
+  "utilization-status": {
+    "normal": "Normal",
+    "warning": "Advertencia",
+    "critical": "Crítico"
+  },
+  "new-manifest": {
+    "title": "Nuevo Manifiesto de Repositorio",
+    "subtitle": "Registrar repositorio de código abierto en un nodo CI/CD regional",
+    "topic": "Tema",
+    "repository": "Repositorio",
+    "repository-hint": "Selecciona primero un tema para cargar repositorios desde GitHub",
+    "repositories-loading": "Cargando repositorios desde GitHub",
+    "repositories-error": "No se pudieron cargar los repositorios desde GitHub. Inténtalo más tarde.",
+    "ci-node": "Nodo CI",
+    "node-available": "Capacidad disponible: {{value}} GB",
+    "allocated-size": "Tamaño asignado (GB)",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "save-error": "No se pudo guardar el manifiesto del repositorio.",
+    "error": {
+      "required": "Este campo es obligatorio",
+      "not-positive": "El tamaño asignado debe ser mayor que 0",
+      "exceeds-capacity": "El tamaño asignado excede la capacidad disponible del nodo CI"
+    }
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "message": "No se encontró la ruta {{path}}.",
+    "back-home": "Volver al Inicio"
+  }
+}

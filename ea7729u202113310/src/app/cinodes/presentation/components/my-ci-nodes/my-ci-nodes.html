@@ -1,0 +1,22 @@
+<section aria-labelledby="my-ci-nodes-title">
+  <h2 id="my-ci-nodes-title">{{ 'ci-nodes.title' | translate }}</h2>
+
+  @if (store.loading()) {
+    <div class="state" role="status" aria-live="polite">
+      <mat-progress-spinner mode="indeterminate" diameter="40" [attr.aria-label]="'ci-nodes.loading' | translate" />
+    </div>
+  } @else if (store.error()) {
+    <div class="state" role="alert">
+      <p>{{ 'ci-nodes.load-error' | translate }}</p>
+      <button mat-stroked-button type="button" (click)="store.loadAll()">{{ 'ci-nodes.retry' | translate }}</button>
+    </div>
+  } @else {
+    <mat-grid-list [cols]="columns()" rowHeight="360px" gutterSize="16px">
+      @for (occupancy of store.occupancies(); track occupancy.node.id) {
+        <mat-grid-tile>
+          <app-ci-node-summary [occupancy]="occupancy" />
+        </mat-grid-tile>
+      }
+    </mat-grid-list>
+  }
+</section>

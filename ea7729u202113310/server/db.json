@@ -1,0 +1,74 @@
+{
+  "ci-nodes": [
+    {
+      "id": "cin-us-east-01",
+      "name": "US-East Virginia CI/CD Node",
+      "location": "Ashburn, VA, USA",
+      "maxStorageCapacityGb": 500
+    },
+    {
+      "id": "cin-eu-west-01",
+      "name": "EU-West Dublin CI/CD Node",
+      "location": "Dublin, Ireland",
+      "maxStorageCapacityGb": 1000
+    },
+    {
+      "id": "cin-ap-south-01",
+      "name": "AP-South Tokyo CI/CD Node",
+      "location": "Tokyo, Japan",
+      "maxStorageCapacityGb": 750
+    },
+    {
+      "id": "cin-sa-east-01",
+      "name": "SA-East Sao Paulo CI/CD Node",
+      "location": "Sao Paulo, Brazil",
+      "maxStorageCapacityGb": 300
+    }
+  ],
+  "repository-manifests": [
+    {
+      "id": "rm-101",
+      "nodeId": "cin-us-east-01",
+      "topic": "angular",
+      "repositoryId": 24195339,
+      "repositoryName": "angular-cli",
+      "fullName": "angular/angular-cli",
+      "stargazersCount": 27000,
+      "allocatedSizeGb": 120,
+      "registeredAt": "2026-10-10T14:30:00.000Z"
+    },
+    {
+      "id": "rm-102",
+      "nodeId": "cin-us-east-01",
+      "topic": "typescript",
+      "repositoryId": 20982830,
+      "repositoryName": "TypeScript",
+      "fullName": "microsoft/TypeScript",
+      "stargazersCount": 98000,
+      "allocatedSizeGb": 250,
+      "registeredAt": "2026-10-11T09:15:00.000Z"
+    },
+    {
+      "id": "rm-103",
+      "nodeId": "cin-eu-west-01",
+      "topic": "node",
+      "repositoryId": 2719377,
+      "repositoryName": "node",
+      "fullName": "nodejs/node",
+      "stargazersCount": 102000,
+      "allocatedSizeGb": 600,
+      "registeredAt": "2026-10-11T11:00:00.000Z"
+    },
+    {
+      "id": "rm-104",
+      "nodeId": "cin-ap-south-01",
+      "topic": "react",
+      "repositoryId": 10270250,
+      "repositoryName": "react",
+      "fullName": "facebook/react",
+      "stargazersCount": 220000,
+      "allocatedSizeGb": 350,
+      "registeredAt": "2026-10-11T12:00:00.000Z"
+    }
+  ]
+}

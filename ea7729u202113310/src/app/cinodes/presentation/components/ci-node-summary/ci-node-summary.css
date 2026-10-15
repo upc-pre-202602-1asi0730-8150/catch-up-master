@@ -1,0 +1,120 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  height: 100%;
+  box-sizing: border-box;
+  --mdc-outlined-card-container-color: var(--mat-sys-surface-container);
+  --mat-card-outlined-container-color: var(--mat-sys-surface-container);
+  --mat-card-outlined-outline-color: var(--mat-sys-outline-variant);
+  display: flex;
+  flex-direction: column;
+}
+
+.inline-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 12px;
+}
+
+.manifests {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.manifests li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.manifests li:last-child {
+  border-bottom: none;
+}
+
+.repo-name {
+  font-weight: 500;
+}
+
+.repo-full-name {
+  grid-column: 1;
+  font-size: 12px;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.repo-size {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.footer {
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+.indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px 16px;
+  margin: 0;
+}
+
+.indicators dt {
+  font-size: 12px;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.indicators dd {
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.status mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.status.normal { color: var(--gh-success); }
+.status.warning { color: var(--gh-warning); }
+.status.critical { color: var(--gh-danger); }

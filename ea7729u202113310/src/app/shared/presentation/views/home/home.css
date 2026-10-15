@@ -1,0 +1,9 @@
+h1 {
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+
+.description {
+  margin: 0 0 24px;
+  color: var(--mat-sys-on-surface-variant);
+}
